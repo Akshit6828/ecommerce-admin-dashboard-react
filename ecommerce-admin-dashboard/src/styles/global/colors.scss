@@ -1,63 +1,75 @@
+/* Light Theme (default) */
 :root {
-  --black: #000000;
-  --white: #ffffff;
-  --grey-80: #f7f7fa; // light background [attached_image:2]
-  --grey-60: #ececec; // very light cards/panels [attached_image:2]
-  --grey-40: #ced4da; // subtle divider/panel [attached_image:2]
-  --grey-20: #d1d5db; // panel, input border [attached_image:2]
-  --grey-10: #f9fafb; // sidebar background [attached_image:2]
+  /* Black / Grayscale */
+  --black-5: #1c1c1c0d; /* very light overlay */
+  --black-10: #1c1c1c1a; /* light overlay / borders */
+  --black-20: #1c1c1c33; /* subtle panel background */
+  --black-40: #1c1c1c66; /* cards, modals */
+  --black-60: #1c1c1c99; /* text secondary */
+  --black-80: #1c1c1ccc; /* headings or strong contrast */
+  --black-100: #1c1c1c; /* full black, primary text */
 
-  --white-smoke: #ececec;
-  --primary: #2563eb; // blue accent (charts, highlights) [attached_image:2]
-  --primary-80: #1e40af; // deep blue [attached_image:2]
-  --primary-50: #3b82f6; // medium blue [attached_image:2]
-  --primary-light: #e0e7ff; // faint blue highlight [attached_image:2]
+  /* White / Grayscale */
+  --white-20: rgba(255, 255, 255, 0.2);
+  --white-40: rgba(255, 255, 255, 0.4);
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-100: rgba(255, 255, 255, 1);
 
-  --secondary: #fafcff; // card, sidebar [attached_image:2]
-  --secondary-50: #d1d5db; // faded panel/text [attached_image:2]
+  /* Primary Colors */
+  --Primary-Blue: #e3f5ff;
+  --Primary-Purple: #e5ecf6;
+  --Primary-Light: #f7f9fb;
+  --Primary-Brand: #1c1c1c;
 
-  --tertiary: #facc15; // notification yellow [attached_image:2]
-  --tertiary-80: #ca8a04; // dark yellow [attached_image:2]
-  --tertiary-light: #fef9c3; // pale yellow highlight [attached_image:2]
+  /* Secondary Colors */
+  --Secondary-Cyan: #a8c5da;
+  --Secondary-Indigo: #95a4fc;
+  --Secondary-Blue: #b1e3ff;
+  --Secondary-Mint: #baedbd;
+  --Secondary-Green: #a1e3cb;
+  --Secondary-Yellow: #ffe999;
 
-  --box-shadow-red: 0 0 4px rgba(228, 28, 35, 0.16);
+  /* Borders */
+  --border-right: 1px solid var(--black-10);
+  --border-primary: 3px solid var(--Primary-Brand);
+  --border-secondary: 3px solid var(--Secondary-Cyan);
 }
 
-.theme-1 {
-  --primary: #2563eb;
-  --primary-80: #1e40af;
-  --primary-50: #3b82f6;
-  --primary-light: #e0e7ff;
+/* Dark Theme */
+[data-theme="dark"] {
+  /* Black / Grayscale (used as white with opacity for dark backgrounds) */
+  --black-5: rgba(255, 255, 255, 0.05);
+  --black-10: rgba(255, 255, 255, 0.1);
+  --black-20: rgba(255, 255, 255, 0.2);
+  --black-40: rgba(255, 255, 255, 0.4);
+  --black-60: rgba(255, 255, 255, 0.6);
+  --black-80: rgba(255, 255, 255, 0.8);
+  --black-100: #ffffff;
 
-  --secondary: #f9fafb;
-  --secondary-50: #d1d5db;
+  /* White / Grayscale (used as black for dark theme if needed) */
+  --white-20: rgba(28, 28, 28, 0.2);
+  --white-40: rgba(28, 28, 28, 0.4);
+  --white-60: rgba(28, 28, 28, 0.6);
+  --white-80: rgba(28, 28, 28, 0.8);
+  --white-100: #1c1c1c;
 
-  --tertiary: #f59e42;
-  --tertiary-80: #b45309;
-  --tertiary-light: #fef3c7;
-}
+  /* Primary Colors */
+  --Primary-Blue: #e3f5ff;
+  --Primary-Purple: #e5ecf6;
+  --Primary-Light: #ffffff0d;
+  --Primary-Brand: #c6c7f8;
 
-.dark {
-  --black: #000000;
-  --white: #ffffff;
-  --grey-80: #23272f; // dark main BG [attached_image:1][attached_image:3]
-  --grey-60: #363b44; // sidebar/cards [attached_image:1][attached_image:3]
-  --grey-40: #6c757d; // muted text [attached_image:1][attached_image:3]
-  --grey-20: #4d4d4d; // divider [attached_image:1]
-  --grey-10: #1a1a1a; // subtle dark BG [attached_image:1]
+  /* Secondary Colors */
+  --Secondary-Cyan: #a8c5da;
+  --Secondary-Indigo: #95a4fc;
+  --Secondary-Blue: #b1e3ff;
+  --Secondary-Mint: #baedbd;
+  --Secondary-Green: #a1e3cb;
+  --Secondary-Yellow: #ffe999;
 
-  --white-smoke: #23272f;
-  --primary: #38bdf8; // blue accent (charts, active) [attached_image:3]
-  --primary-80: #0369a1; // deep blue [attached_image:1][attached_image:3]
-  --primary-50: #60a5fa; // lighter blue [attached_image:1]
-  --primary-light: #1e293b; // card dark highlight [attached_image:1][attached_image:3]
-
-  --secondary: #2f333b; // sidebar background [attached_image:1][attached_image:3]
-  --secondary-50: #86a0b8; // faded icons/text [attached_image:1][attached_image:3]
-
-  --tertiary: #facc15; // notification yellow [attached_image:3]
-  --tertiary-80: #ca8a04; // dark yellow [attached_image:3]
-  --tertiary-light: #fef9c3; // light yellow highlight [attached_image:3]
-
-  --box-shadow-red: 0 0 4px rgba(228, 28, 35, 0.18); // slightly deeper for dark
+  /* Borders */
+  --border-right: 1px solid var(--black-10);
+  --border-primary: 3px solid var(--Primary-Brand);
+  --border-secondary: 3px solid var(--Secondary-Cyan);
 }
