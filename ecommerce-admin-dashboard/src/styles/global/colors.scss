@@ -34,6 +34,16 @@
   --border-right: 1px solid var(--black-10);
   --border-primary: 3px solid var(--Primary-Brand);
   --border-secondary: 3px solid var(--Secondary-Cyan);
+
+  /* Primary Colors */
+  --color-bg-primary: var(--Primary-Light);     /* page background */
+  --color-bg-secondary: var(--Primary-Purple);  /* panels/cards */
+  --color-bg-accent: var(--Primary-Blue);       /* highlights */
+  --color-brand: var(--Primary-Brand);          /* main brand color */
+
+  --color-text-primary: var(--black-100);       /* main text */
+  --color-text-secondary: var(--black-60);      /* secondary text */
+  --color-text-inverse: var(--white-100);       /* text on dark bg */
 }
 
 /* Dark Theme */
@@ -72,4 +82,14 @@
   --border-right: 1px solid var(--black-10);
   --border-primary: 3px solid var(--Primary-Brand);
   --border-secondary: 3px solid var(--Secondary-Cyan);
+
+  /* Primary Colors (purpose-based) */
+  --color-bg-primary: var(--Primary-Light);    /* page background */
+  --color-bg-secondary: var(--Primary-Purple); /* panels/cards */
+  --color-bg-accent: var(--Primary-Blue);      /* highlights */
+  --color-brand: var(--Primary-Brand);         /* main brand color */
+
+  --color-text-primary: var(--black-100);      /* main text */
+  --color-text-secondary: var(--black-60);     /* secondary text */
+  --color-text-inverse: var(--white-100);      /* text on dark bg */
 }
