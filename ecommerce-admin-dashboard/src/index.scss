@@ -1,0 +1,13 @@
+@use "./styles/index.scss";
+
+* {
+  font-family: "Roboto", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-50) var(--white);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
