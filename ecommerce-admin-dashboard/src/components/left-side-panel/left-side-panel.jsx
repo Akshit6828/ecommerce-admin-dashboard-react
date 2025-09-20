@@ -1,83 +1,269 @@
-import React from "react";
+import { Avatar } from "@mui/material";
 import "./left-side-panel.scss";
+import { Link } from "react-router-dom";
+import { useMemo, useState } from "react";
 
-const menuConfig = [
+const userInfo = {
+  firstName: "ByeWind",
+  lastName: "",
+  avatar: "/public/assets/images/user-avtar-image.png",
+};
+
+const menuItemsList = [
   {
     id: 1,
-    label: "Favorites",
+    label: "Dashboards",
     children: [
-      { id: 11, route: "/overview", label: "Overview" },
-      { id: 12, route: "/projects", label: "Projects" },
+      {
+        id: 11,
+        route: "/",
+        label: "Default",
+        hasChildren: false,
+        icon: "/public/assets/icons/left-side-panel/Dashboard.svg",
+      },
+      {
+        id: 12,
+        route: "/ecommerce",
+        label: "eCommerce",
+        hasChildren: true,
+        icon: "/public/assets/icons/left-side-panel/Ecommerce.svg",
+        children: [],
+      },
+      {
+        id: 13,
+        route: "/projects",
+        label: "Projects",
+        hasChildren: true,
+        icon: "/public/assets/icons/left-side-panel/File.svg",
+        children: [],
+      },
+      {
+        id: 14,
+        route: "/online-courses",
+        label: "Online Courses",
+        hasChildren: true,
+        icon: "/public/assets/icons/left-side-panel/Book-Icon.svg",
+        children: [],
+      },
     ],
   },
   {
     id: 2,
-    label: "Dashboards",
-    children: [
-      { id: 21, route: "/default", label: "Default" },
-      { id: 22, route: "/ecommerce", label: "eCommerce" },
-      { id: 23, route: "/projects", label: "Projects" },
-      { id: 24, route: "/online-courses", label: "Online Courses" },
-    ],
-  },
-  {
-    id: 3,
     label: "Pages",
     children: [
       {
-        id: 31,
+        id: 21,
         label: "User Profile",
+        route: "/profile",
+        icon: "/public/assets/icons/left-side-panel/User-Profile.svg",
+        hasChildren: true,
         children: [
-          { id: 311, route: "/profile/overview", label: "Overview" },
-          { id: 312, route: "/profile/projects", label: "Projects" },
-          { id: 313, route: "/profile/campaigns", label: "Campaigns" },
-          { id: 314, route: "/profile/documents", label: "Documents" },
-          { id: 315, route: "/profile/followers", label: "Followers" },
+          { id: 211, route: "/profile/overview", label: "Overview" },
+          { id: 212, route: "/profile/projects", label: "Projects" },
+          { id: 213, route: "/profile/campaigns", label: "Campaigns" },
+          { id: 214, route: "/profile/documents", label: "Documents" },
+          { id: 215, route: "/profile/followers", label: "Followers" },
         ],
       },
-      { id: 32, route: "/account", label: "Account" },
-      { id: 33, route: "/corporate", label: "Corporate" },
-      { id: 34, route: "/blog", label: "Blog" },
-      { id: 35, route: "/social", label: "Social" },
+      {
+        id: 22,
+        route: "/account",
+        label: "Account",
+        icon: "/public/assets/icons/left-side-panel/Account.svg",
+        hasChildren: true,
+      },
+      {
+        id: 23,
+        route: "/corporate",
+        label: "Corporate",
+        icon: "/public/assets/icons/left-side-panel/UsersThree.svg",
+        hasChildren: true,
+      },
+      {
+        id: 24,
+        route: "/blog",
+        label: "Blog",
+        icon: "/public/assets/icons/left-side-panel/Blog.svg",
+        hasChildren: true,
+      },
+      {
+        id: 25,
+        route: "/social",
+        label: "Social",
+        icon: "/public/assets/icons/left-side-panel/Social.svg",
+        hasChildren: true,
+      },
     ],
   },
 ];
 
+const recentAndFavoriteMenus = [];
+
 export default function LeftSidePanel() {
-  const renderMenu = (items) => {
+  const [selectedNavbar, setSelectedNavbar] = useState(
+    menuItemsList?.[0]?.children?.[0]
+  );
+
+  const [recentlyOpenedMenu, setRecentlyOpenedMenu] = useState([]);
+  const [selectedTab, setSelectedTab] = useState("");
+
+  const handleRecentlyAddedMenu = (item) => {
+    if (recentlyOpenedMenu?.some((openitem) => openitem.id === item.id)) {
+      return;
+    }
+
+    setRecentlyOpenedMenu([...recentlyOpenedMenu, item]);
+  };
+
+  const handleNavItemClick = (event, selectedItem) => {
+    event.stopPropagation();
+    setSelectedNavbar(selectedItem);
+    handleRecentlyAddedMenu(selectedItem);
+  };
+
+  const navItem = (item, isActive = false, hasParent = false, fromRecent) => {
     return (
-      <ul className="sidebar__list">
-        {items.map((item) => (
-          <li key={item.id}>
-            {item.route ? (
-              <a href={item.route} className="sidebar__link">
-                {item.label}
-              </a>
-            ) : (
-              <span className="sidebar__label">{item.label}</span>
-            )}
-            {item.children && renderMenu(item.children)}
-          </li>
-        ))}
+      <>
+        <span className="selected"></span>
+        <span className="arrow">
+          {item.hasChildren && (
+            <img
+              className={isActive ? "active" : ""}
+              src="/public/assets/icons/left-side-panel/ArrowLineRight.svg"
+              alt="arrow"
+            />
+          )}
+        </span>
+        {hasParent && !item.icon && <span className="arrow"></span>}
+        <span className="nav-item">
+          {item.icon ? (
+            <span className="icon">
+              <img src={item.icon} alt={item.label} />
+            </span>
+          ) : (
+            fromRecent && <span className="dot"></span>
+          )}
+          <span className="label">{item.label}</span>
+        </span>
+      </>
+    );
+  };
+
+  const renderMenu = (items, hasParent = false, fromRecent = false) => {
+    if (items.length === 0) {
+      return <></>;
+    }
+
+    return (
+      <ul className="list">
+        {items.map((item) => {
+          const isActive =
+            item.id.toString().includes(selectedNavbar.id.toString()) ||
+            selectedNavbar.id.toString().includes(item.id.toString());
+
+          return (
+            <li
+              key={item.id}
+              onClick={(event) => handleNavItemClick(event, item)}
+            >
+              {item?.route ? (
+                <Link
+                  to={item.route}
+                  className={`link ${
+                    !fromRecent && selectedNavbar.id === item.id ? "active" : ""
+                  }`}
+                >
+                  {navItem(item, isActive, hasParent, fromRecent)}
+                </Link>
+              ) : (
+                navItem(item, isActive, hasParent, fromRecent)
+              )}
+              {item.children &&
+                isActive &&
+                !fromRecent &&
+                renderMenu(item.children, true, false)}
+            </li>
+          );
+        })}
       </ul>
     );
   };
 
-  return (
-    <div className="sidebar">
-      {/* User Info */}
-      <div className="sidebar__user">
-        <div className="sidebar__avatar">👤</div>
-        <span className="sidebar__name">ByeWind</span>
-      </div>
+  const recentTitles = useMemo(() => {
+    const list = [];
+    if (recentAndFavoriteMenus?.length > 0) {
+      list.push("Favorites");
+    }
 
-      {/* Render Menu */}
-      {menuConfig.map((section) => (
-        <div className="sidebar__section" key={section.id}>
-          <h4 className="sidebar__title">{section.label}</h4>
-          {renderMenu(section.children)}
+    if (recentlyOpenedMenu?.length > 0) {
+      list.push("Recently");
+    }
+
+    if (!selectedTab) {
+      setSelectedTab(list[0]);
+    }
+    return list;
+  }, [recentlyOpenedMenu.length, recentAndFavoriteMenus.length]);
+
+  console.log({
+    recentTitles,
+  });
+
+  return (
+    <aside className="sidebar">
+      {/* User Info */}
+      <header className="user">
+        <div className="avatar">
+          {userInfo?.avatar ? (
+            <Avatar
+              sx={{ width: 24, height: 24 }}
+              alt={`${userInfo.firstName} ${userInfo.lastName} image`}
+              src={userInfo?.avatar}
+            />
+          ) : (
+            <Avatar sx={{ width: 24, height: 24 }}>
+              {userInfo?.firstName?.charAt(0).toUpperCase()}
+            </Avatar>
+          )}
         </div>
+        <span className="name">
+          {userInfo?.firstName} {userInfo?.lastName}
+        </span>
+      </header>
+
+      {/* Recent and Favorites */}
+      {(recentlyOpenedMenu?.length > 0 ||
+        recentAndFavoriteMenus?.length > 0) && (
+        <section className="recent-and-favorites">
+          <div className="title-container">
+            {recentTitles?.map((title, titleindex) => {
+              return (
+                <div
+                  className={`title ${selectedTab === title && "active"}`}
+                  key={`title-${titleindex}`}
+                  onClick={() => setSelectedTab(title)}
+                >
+                  {title}
+                </div>
+              );
+            })}
+          </div>
+          <nav aria-label={"recent"}>
+            {selectedTab === "Favorites" &&
+              renderMenu(recentAndFavoriteMenus, false, true)}
+            {selectedTab === "Recently" &&
+              renderMenu(recentlyOpenedMenu, false, true)}
+          </nav>
+        </section>
+      )}
+
+      {/* Menu */}
+      {menuItemsList?.map((menuItem) => (
+        <section className="section" key={`menu-item-${menuItem.id}`}>
+          <h2 className="title">{menuItem.label}</h2>
+          <nav aria-label={menuItem.label}>{renderMenu(menuItem.children)}</nav>
+        </section>
       ))}
-    </div>
+    </aside>
   );
 }

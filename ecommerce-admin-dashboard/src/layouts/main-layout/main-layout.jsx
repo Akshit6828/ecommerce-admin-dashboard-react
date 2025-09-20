@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import "./main-layout.scss";
 import LeftSidePanel from "../../components/left-side-panel/left-side-panel";
+import { Outlet } from "react-router-dom";
 
-export default function MainLayout() {
+export default function MainLayout(props) {
   const [showRightPanel, setShowRightPanel] = useState(true);
 
   return (
     <div className="main-layout">
       {/* left-side-menu (sidebar) starts at top */}
-      <div className="main-layout__side-menu">
-        <LeftSidePanel />
-      </div>
+      <LeftSidePanel />
 
       {/* right container: app-header on top + content below */}
       <div className="main-layout__right-container">
@@ -27,15 +26,17 @@ export default function MainLayout() {
         </div>
 
         {/* main content area */}
-        <div className="main-layout__content">
+        <main className="main-layout__content">
           {/* main-panel */}
-          <div className="main-layout__main-panel">main-panel</div>
+          <div className="main-layout__main-panel">
+            <Outlet />
+          </div>
 
           {/* right-side-panel - conditional rendering */}
           {showRightPanel && (
             <div className="main-layout__right-panel">right-side-panel</div>
           )}
-        </div>
+        </main>
       </div>
     </div>
   );

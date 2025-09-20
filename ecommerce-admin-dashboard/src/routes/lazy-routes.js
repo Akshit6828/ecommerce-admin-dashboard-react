@@ -6,5 +6,8 @@ const LazyMainLayout = React.lazy(() =>
 const LazyLandingPage = React.lazy(() =>
   import("../pages/landing-page/landing-page")
 );
+const LazyCommingSoon = React.lazy(() =>
+  import("../pages/comming-soon/comming-soon")
+);
 
-export { LazyMainLayout, LazyLandingPage };
+export { LazyMainLayout, LazyLandingPage, LazyCommingSoon };
