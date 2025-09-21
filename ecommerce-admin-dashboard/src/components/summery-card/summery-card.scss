@@ -39,3 +39,23 @@
     }
   }
 }
+
+[data-theme="dark"] {
+  .summery-card {
+    &.dark {
+      .content {
+        color: var(--black-100);
+      }
+    }
+
+    &.light {
+      .title {
+        color: var(--white-100);
+      }
+
+      .theme-icon {
+        filter: var(--filter-black);
+      }
+    }
+  }
+}

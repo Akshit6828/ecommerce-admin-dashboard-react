@@ -4,6 +4,9 @@ import "./landing-page.scss";
 import BarChart from "../../components/charts/bar-chart/bar-chart";
 import LineChart from "../../components/charts/line-chart/line-chart";
 import WorldMap from "../../components/charts/world-map/world-map";
+import { Pie } from "react-chartjs-2";
+import PieChart from "../../components/charts/pie-chart/pie-chart";
+import TopSellingProduct from "../../components/top-selling-products/top-selling-products";
 
 const summaryCardsData = [
   {
@@ -12,20 +15,25 @@ const summaryCardsData = [
     percentage: "+11.01%",
     color: "#e3f5ff",
     icon: "up", // use your up arrow or chart-up icon
+    classes: "light",
   },
   {
     title: "Orders",
     count: "1,219",
     percentage: "-0.03%",
     color: "#f7f9fb",
+    color: "var(--Primary-Light-2)",
     icon: "down", // use your down arrow or chart-down icon
+    classes: "dark",
   },
   {
     title: "Revenue",
     count: "$695",
     percentage: "+15.03%",
     color: "#f7f9fb",
+    color: "var(--Primary-Light-2)",
     icon: "up", // use your up arrow or chart-up icon
+    classes: "dark",
   },
   {
     title: "Growth",
@@ -33,6 +41,7 @@ const summaryCardsData = [
     percentage: "+6.08%",
     color: "#e5ecf6",
     icon: "up", // use your up arrow or chart-up icon
+    classes: "light",
   },
 ];
 
@@ -60,8 +69,12 @@ export default function LandingPage() {
           </div>
         </section>
         <section className="sales-summery">
-          <div className="top-products-conatiner"></div>
-          <div className="total-sales-summery"></div>
+          <div className="top-products-conatiner">
+            <TopSellingProduct />
+          </div>
+          <div className="total-sales-summery">
+            <PieChart />
+          </div>
         </section>
       </div>
     </div>

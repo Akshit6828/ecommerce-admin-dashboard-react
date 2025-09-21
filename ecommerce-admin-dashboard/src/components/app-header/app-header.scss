@@ -22,8 +22,9 @@
 
       .active {
         // Need to check for favorite icon
-        filter: brightness(0) saturate(100%) invert(87%) sepia(10%)
-          saturate(3930%) hue-rotate(5deg) brightness(118%) contrast(97%);
+        // content: url("/public/assets/icons/global/Star.svg");
+        // filter: invert(12%) sepia(100%) saturate(7494%) hue-rotate(41deg)
+        //   brightness(105%) contrast(101%) !important;
       }
     }
 

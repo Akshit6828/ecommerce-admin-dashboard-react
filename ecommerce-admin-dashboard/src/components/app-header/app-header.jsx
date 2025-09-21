@@ -94,9 +94,15 @@ const AppHeader = () => {
         <span className="icon theme-icon">
           <img src="/public/assets/icons/global/Sidebar.svg" alt="menu" />
         </span>
-        <span className="icon theme-icon" onClick={handleFavoriteClick}>
+        <span className="icon " onClick={handleFavoriteClick}>
           <img
-            src="/public/assets/icons/global/Star.svg"
+            width={16}
+            height={16}
+            src={
+              isFavoritePageData
+                ? "/public/assets/icons/global/YellowStar.png"
+                : "/public/assets/icons/global/Star.svg"
+            }
             className={`${isFavoritePageData && "active"}`}
             alt="favorite"
           />

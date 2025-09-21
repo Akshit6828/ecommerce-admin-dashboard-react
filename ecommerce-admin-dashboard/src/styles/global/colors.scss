@@ -54,6 +54,9 @@
     saturate(349%) hue-rotate(329deg) brightness(104%) contrast(88%);
 
   --filter-primary: var(--filter-black);
+
+  --filter-yellow: brightness(0) saturate(100%) invert(99%) sepia(86%)
+    saturate(3704%) hue-rotate(320deg) brightness(104%) contrast(80%);
 }
 
 /* Dark Theme */

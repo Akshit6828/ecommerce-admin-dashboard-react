@@ -9,7 +9,7 @@ const NOTIFICATION_TYPE = {
 const ICONS_MAPPING = {
   [NOTIFICATION_TYPE.bug]: {
     icon: "/public/assets/icons/global/BugBeetle.svg",
-    color: "#E3F5FF",
+    color: "var(--Primary-Blue)",
   },
   [NOTIFICATION_TYPE.user_register]: {
     icon: "/public/assets/icons/global/User-Icon.svg",
