@@ -6,7 +6,7 @@
   padding: var(--gap-md);
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);

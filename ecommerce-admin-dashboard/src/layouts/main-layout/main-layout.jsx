@@ -3,6 +3,7 @@ import LeftSidePanel from "../../components/left-side-panel/left-side-panel";
 import AppHeader from "../../components/app-header/app-header";
 import { Outlet } from "react-router-dom";
 import { useNotification } from "../../context/notificationContext";
+import NotificationSidePanel from "../../components/notification-side-panel/notification-side-panel";
 
 export default function MainLayout(props) {
   const { isOpen } = useNotification();
@@ -28,7 +29,8 @@ export default function MainLayout(props) {
 
       {/* right-side-panel - conditional rendering */}
       {isOpen && (
-        <div className="main-layout__right-panel">right-side-panel</div>
+        // <div className="main-layout__right-panel">right-side-panel</div>
+        <NotificationSidePanel />
       )}
     </div>
   );

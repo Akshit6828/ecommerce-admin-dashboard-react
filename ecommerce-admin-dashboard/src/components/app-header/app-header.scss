@@ -8,13 +8,19 @@
 
   .navigation-container {
     display: flex;
-    gap: var(--gap-sm);
+    gap: var(--gap-md);
     align-items: center;
 
     .icon {
       height: 20px;
       width: 20px;
       cursor: pointer;
+
+      .active {
+        // Need to check for favorite icon
+        filter: brightness(0) saturate(100%) invert(87%) sepia(10%)
+          saturate(3930%) hue-rotate(5deg) brightness(118%) contrast(97%);
+      }
     }
 
     .navigations {
@@ -45,13 +51,14 @@
 
   .filters-container {
     display: flex;
-    gap: var(--gap-sm);
+    gap: var(--gap-md);
     align-items: center;
 
     .icon {
       height: 20px;
       width: 20px;
       cursor: pointer;
+      filter: var(--filter-primary);
     }
   }
 }

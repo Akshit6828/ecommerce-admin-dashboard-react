@@ -6,14 +6,18 @@ import { router } from "./routes/routes.jsx";
 import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "./context/themeContext.jsx";
 import { NotificationProvider } from "./context/notificationContext.jsx";
+import { Provider } from "react-redux";
+import { store } from "./redux-store/store.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider>
-      <NotificationProvider>
-        <RouterProvider router={router} />
-        <App />
-      </NotificationProvider>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider>
+        <NotificationProvider>
+          <RouterProvider router={router} />
+          <App />
+        </NotificationProvider>
+      </ThemeProvider>
+    </Provider>
   </StrictMode>
 );

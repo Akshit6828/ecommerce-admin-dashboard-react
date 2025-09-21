@@ -13,8 +13,8 @@ export const router = createBrowserRouter([
       { index: true, element: <Navigate to="/dashboard/default" /> },
       {
         path: "dashboard",
-        element: <LazyLandingPage />,
         children: [
+          { index: true, element: <Navigate to="default" /> },
           { path: "default", index: true, element: <LazyLandingPage /> },
           { path: "ecommerce", element: <LazyCommingSoon /> },
           { path: "projects", element: <LazyCommingSoon /> },

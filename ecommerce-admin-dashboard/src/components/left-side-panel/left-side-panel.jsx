@@ -1,115 +1,15 @@
 import { Avatar } from "@mui/material";
 import "./left-side-panel.scss";
-import { Link } from "react-router-dom";
-import { useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useMemo, useState } from "react";
+import { menuItemsList } from "../../constants/menuList";
+import { useSelector } from "react-redux";
 
 const userInfo = {
   firstName: "ByeWind",
   lastName: "",
   avatar: "/public/assets/images/user-avtar-image.png",
 };
-
-const menuItemsList = [
-  {
-    id: 1,
-    label: "Dashboards",
-    children: [
-      {
-        id: 11,
-        route: "/dashboard/default",
-        label: "Default",
-        hasChildren: false,
-        icon: "/public/assets/icons/left-side-panel/Dashboard.svg",
-      },
-      {
-        id: 12,
-        route: "/dashboard/ecommerce",
-        label: "eCommerce",
-        hasChildren: true,
-        icon: "/public/assets/icons/left-side-panel/Ecommerce.svg",
-        children: [],
-      },
-      {
-        id: 13,
-        route: "/dashboard/projects",
-        label: "Projects",
-        hasChildren: true,
-        icon: "/public/assets/icons/left-side-panel/File.svg",
-        children: [],
-      },
-      {
-        id: 14,
-        route: "/dashboard/online-courses",
-        label: "Online Courses",
-        hasChildren: true,
-        icon: "/public/assets/icons/left-side-panel/Book-Icon.svg",
-        children: [],
-      },
-    ],
-  },
-  {
-    id: 2,
-    label: "Pages",
-    children: [
-      {
-        id: 21,
-        label: "User Profile",
-        route: "/pages/user-profile",
-        icon: "/public/assets/icons/left-side-panel/User-Profile.svg",
-        hasChildren: true,
-        children: [
-          { id: 211, route: "/pages/user-profile/overview", label: "Overview" },
-          { id: 212, route: "/pages/user-profile/projects", label: "Projects" },
-          {
-            id: 213,
-            route: "/pages/user-profile/campaigns",
-            label: "Campaigns",
-          },
-          {
-            id: 214,
-            route: "/pages/user-profile/documents",
-            label: "Documents",
-          },
-          {
-            id: 215,
-            route: "/pages/user-profile/followers",
-            label: "Followers",
-          },
-        ],
-      },
-      {
-        id: 22,
-        route: "/pages/account",
-        label: "Account",
-        icon: "/public/assets/icons/left-side-panel/Account.svg",
-        hasChildren: true,
-      },
-      {
-        id: 23,
-        route: "/pages/corporate",
-        label: "Corporate",
-        icon: "/public/assets/icons/left-side-panel/UsersThree.svg",
-        hasChildren: true,
-      },
-      {
-        id: 24,
-        route: "/pages/blog",
-        label: "Blog",
-        icon: "/public/assets/icons/left-side-panel/Blog.svg",
-        hasChildren: true,
-      },
-      {
-        id: 25,
-        route: "/pages/social",
-        label: "Social",
-        icon: "/public/assets/icons/left-side-panel/Social.svg",
-        hasChildren: true,
-      },
-    ],
-  },
-];
-
-const recentAndFavoriteMenus = [];
 
 export default function LeftSidePanel() {
   const [selectedNavbar, setSelectedNavbar] = useState(
@@ -118,6 +18,39 @@ export default function LeftSidePanel() {
 
   const [recentlyOpenedMenu, setRecentlyOpenedMenu] = useState([]);
   const [selectedTab, setSelectedTab] = useState("");
+
+  const favoritesTabs = useSelector((state) => state?.favorites?.favoritesTabs);
+
+  const location = useLocation();
+  let pathname = location?.pathname;
+
+  useEffect(() => {
+    if (pathname === "/") {
+      setSelectedNavbar(menuItemsList?.[0]?.children?.[0]);
+    } else {
+      const selected = findMenuItem(menuItemsList, pathname);
+      if (selected) {
+        setSelectedNavbar(selected);
+      }
+    }
+  }, [pathname, menuItemsList]);
+
+  function findMenuItem(items, pathname) {
+    for (const item of items) {
+      // direct match (route includes pathname or exact match)
+      if (item?.route?.includes(pathname) || item?.route === pathname) {
+        return item;
+      }
+
+      // check in children recursively
+      if (item?.children?.length) {
+        const found = findMenuItem(item.children, pathname);
+        if (found) return found;
+      }
+    }
+
+    return null;
+  }
 
   const handleRecentlyAddedMenu = (item) => {
     if (recentlyOpenedMenu?.some((openitem) => openitem.id === item.id)) {
@@ -137,10 +70,10 @@ export default function LeftSidePanel() {
     return (
       <>
         <span className="selected"></span>
-        <span className="arrow">
+        <span className="arrow theme-icon">
           {item.hasChildren && (
             <img
-              className={isActive ? "active" : ""}
+              className={!fromRecent && isActive ? "active" : ""}
               src="/public/assets/icons/left-side-panel/ArrowLineRight.svg"
               alt="arrow"
             />
@@ -149,7 +82,7 @@ export default function LeftSidePanel() {
         {hasParent && !item.icon && <span className="arrow"></span>}
         <span className="nav-item">
           {item.icon ? (
-            <span className="icon">
+            <span className="icon theme-icon">
               <img src={item.icon} alt={item.label} />
             </span>
           ) : (
@@ -203,7 +136,7 @@ export default function LeftSidePanel() {
 
   const recentTitles = useMemo(() => {
     const list = [];
-    if (recentAndFavoriteMenus?.length > 0) {
+    if (favoritesTabs?.length > 0) {
       list.push("Favorites");
     }
 
@@ -215,11 +148,7 @@ export default function LeftSidePanel() {
       setSelectedTab(list[0]);
     }
     return list;
-  }, [recentlyOpenedMenu.length, recentAndFavoriteMenus.length]);
-
-  console.log({
-    recentTitles,
-  });
+  }, [recentlyOpenedMenu.length, favoritesTabs.length]);
 
   return (
     <aside className="sidebar">
@@ -244,8 +173,7 @@ export default function LeftSidePanel() {
       </header>
 
       {/* Recent and Favorites */}
-      {(recentlyOpenedMenu?.length > 0 ||
-        recentAndFavoriteMenus?.length > 0) && (
+      {(recentlyOpenedMenu?.length > 0 || favoritesTabs?.length > 0) && (
         <section className="recent-and-favorites">
           <div className="title-container">
             {recentTitles?.map((title, titleindex) => {
@@ -262,7 +190,7 @@ export default function LeftSidePanel() {
           </div>
           <nav aria-label={"recent"}>
             {selectedTab === "Favorites" &&
-              renderMenu(recentAndFavoriteMenus, false, true)}
+              renderMenu(favoritesTabs, false, true)}
             {selectedTab === "Recently" &&
               renderMenu(recentlyOpenedMenu, false, true)}
           </nav>
