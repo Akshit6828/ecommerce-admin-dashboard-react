@@ -21,7 +21,6 @@ const summaryCardsData = [
     title: "Orders",
     count: "1,219",
     percentage: "-0.03%",
-    color: "#f7f9fb",
     color: "var(--Primary-Light-2)",
     icon: "down", // use your down arrow or chart-down icon
     classes: "dark",
@@ -30,7 +29,6 @@ const summaryCardsData = [
     title: "Revenue",
     count: "$695",
     percentage: "+15.03%",
-    color: "#f7f9fb",
     color: "var(--Primary-Light-2)",
     icon: "up", // use your up arrow or chart-up icon
     classes: "dark",
