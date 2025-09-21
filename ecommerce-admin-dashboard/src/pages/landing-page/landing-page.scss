@@ -54,6 +54,7 @@
 
       .total-sales-summery {
         grid-column: span 1;
+        overflow: auto;
       }
     }
   }

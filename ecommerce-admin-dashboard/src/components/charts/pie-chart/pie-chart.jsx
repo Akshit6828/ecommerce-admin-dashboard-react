@@ -1,4 +1,3 @@
-import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./pie-chart.scss";
@@ -13,9 +12,8 @@ const PieChart = () => {
     { name: "E-mail", value: 48.96, color: "#87CEEB", percentage: 6.3 },
   ];
 
-  // Add small gap values between segments
   const createDataWithGaps = () => {
-    const gapValue = 10; // Slightly larger gap for better rounded corner visibility
+    const gapValue = 8;
     const dataWithGaps = [];
     const colorsWithGaps = [];
     const labelsWithGaps = [];
@@ -26,7 +24,7 @@ const PieChart = () => {
       colorsWithGaps.push(item.color);
       labelsWithGaps.push(item.name);
       // Each segment gets rounded corners on both ends
-      borderRadiusArray.push(15);
+      borderRadiusArray.push(8);
 
       // Add gap after each segment (except the last one)
       if (index < salesData.length - 1) {

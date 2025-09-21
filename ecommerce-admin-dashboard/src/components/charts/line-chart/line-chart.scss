@@ -5,6 +5,7 @@
   gap: var(--gap-md);
   background-color: var(--Primary-Light-2);
   border-radius: var(--radius-xl);
+  height: -webkit-fill-available;
 
   .title-container {
     display: flex;

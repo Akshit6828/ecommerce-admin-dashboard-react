@@ -13,8 +13,8 @@ const summaryCardsData = [
     title: "Customers",
     count: "3,781",
     percentage: "+11.01%",
-    color: "#e3f5ff",
-    icon: "up", // use your up arrow or chart-up icon
+    color: "#e3f5ff", // harcoding here as here we wont change out tiles based on global variables
+    icon: "up",
     classes: "light",
   },
   {
@@ -22,7 +22,7 @@ const summaryCardsData = [
     count: "1,219",
     percentage: "-0.03%",
     color: "var(--Primary-Light-2)",
-    icon: "down", // use your down arrow or chart-down icon
+    icon: "down",
     classes: "dark",
   },
   {
@@ -30,7 +30,7 @@ const summaryCardsData = [
     count: "$695",
     percentage: "+15.03%",
     color: "var(--Primary-Light-2)",
-    icon: "up", // use your up arrow or chart-up icon
+    icon: "up",
     classes: "dark",
   },
   {
@@ -38,7 +38,7 @@ const summaryCardsData = [
     count: "30.1%",
     percentage: "+6.08%",
     color: "#e5ecf6",
-    icon: "up", // use your up arrow or chart-up icon
+    icon: "up",
     classes: "light",
   },
 ];

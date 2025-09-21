@@ -91,23 +91,12 @@ const BarChart = ({ data = projectionsVsActualsData }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log({
-        chartRef,
-        isOpen,
-      });
-
       if (isOpen && chartRef.current) {
         setTimeout(() => {
-          console.log("chart resized");
-
           chartRef.current.resize();
         }, 1000);
       }
     };
-    console.log({
-      test: 45,
-      isOpen,
-    });
 
     handleResize();
 

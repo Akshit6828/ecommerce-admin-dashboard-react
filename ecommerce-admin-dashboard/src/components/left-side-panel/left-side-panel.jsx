@@ -35,6 +35,12 @@ export default function LeftSidePanel() {
     }
   }, [pathname, menuItemsList]);
 
+  // useEffect(() => {
+  //   if (favoritesTabs.length > 0) {
+  //     setSelectedTab([...favoritesTabs, "Favorites"]);
+  //   }
+  // }, [favoritesTabs.length]);
+
   function findMenuItem(items, pathname) {
     for (const item of items) {
       // direct match (route includes pathname or exact match)
@@ -144,8 +150,10 @@ export default function LeftSidePanel() {
       list.push("Recently");
     }
 
-    if (!selectedTab) {
+    if (list?.length > 0) {
       setSelectedTab(list[0]);
+    } else {
+      setSelectedTab("");
     }
     return list;
   }, [recentlyOpenedMenu.length, favoritesTabs.length]);

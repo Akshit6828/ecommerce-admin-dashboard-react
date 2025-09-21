@@ -18,9 +18,9 @@ const favoritesSlice = createSlice({
       }
     },
     removeFavorite: (state, action) => {
-      state.favoritesTabs = state.favoritesTabs.filter(
-        (tab) => tab.id !== action?.payload?.id
-      );
+      state.favoritesTabs = [
+        ...state.favoritesTabs.filter((tab) => tab.id !== action?.payload?.id),
+      ];
     },
     clearFavorites: (state) => {
       state.favoritesTabs = [];

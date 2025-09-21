@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Chart, registerables } from "chart.js";
 import {
   ChoroplethController,

@@ -64,7 +64,6 @@
     flex-direction: column;
 
     li {
-      // margin-bottom: 4px;
       cursor: pointer;
       border-radius: var(--radius-md);
 
@@ -86,12 +85,7 @@
         .selected {
           width: 4px;
           height: 16px;
-          // background: var(--color-text-primary);
           border-radius: var(--radius-sm);
-
-          // &.active {
-          //   background: var(--color-text-primary);
-          // }
         }
 
         .arrow {
@@ -102,7 +96,7 @@
             /* Rotate 90 degrees clockwise */
             transform: rotate(90deg);
 
-            /* Optional: smooth rotation transition */
+            /*  smooth rotation transition */
             transition: transform 0.5s ease;
           }
         }
@@ -122,23 +116,6 @@
           .icon {
             height: 20px;
             width: 20px;
-          }
-
-          .label {
-          }
-        }
-      }
-
-      .list {
-        // padding-left: 16px;
-        // margin-top: 4px;
-
-        .link {
-          // font-size: 13px;
-          // color: #666;
-
-          &:hover {
-            // background: #f9f9f9;
           }
         }
       }
