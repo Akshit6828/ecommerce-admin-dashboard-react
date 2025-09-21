@@ -8,6 +8,17 @@ This template provides a comprehensive setup for building an eCommerce admin das
 
 **Video Demo**: [Coming Soon - YouTube Demo Video]
 
+
+## Screenshots
+
+<img width="1024" height="998" alt="landing-page" src="https://github.com/user-attachments/assets/260c6472-a294-48e2-9184-b446cadac539" />
+
+<img width="1024" height="998" alt="landing-page-dark" src="https://github.com/user-attachments/assets/d6935138-ff29-4a8d-b495-05d6758ca1ed" />
+
+<img width="1024" height="998" alt="landing-page-sidebar"  src="https://github.com/user-attachments/assets/548861d4-4376-4bed-afb9-a5b532912732" />
+
+<img width="1024" height="998" alt="order-table"   src="https://github.com/user-attachments/assets/8a50753c-52d1-4aa6-b2a9-5d36f27a1bea" />
+
 ## Key Features
 
 - **React and Vite**: Utilizes React for building the UI and Vite for fast development and build processes.
