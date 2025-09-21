@@ -2,6 +2,12 @@
 
 This template provides a comprehensive setup for building an eCommerce admin dashboard using React and Vite. It includes features like routing, theming, notifications, Redux store, various UI components, and chart integrations.
 
+## 🚀 Live Demo
+
+**Production URL**: [https://ecommerce-admin-dashboard-react-three.vercel.app/](https://ecommerce-admin-dashboard-react-three.vercel.app/)
+
+**Video Demo**: [Coming Soon - YouTube Demo Video]
+
 ## Key Features
 
 - **React and Vite**: Utilizes React for building the UI and Vite for fast development and build processes.
