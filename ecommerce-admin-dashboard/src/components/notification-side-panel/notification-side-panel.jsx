@@ -103,10 +103,10 @@ const NotificationSidePanel = () => {
     <div className="notification-side-panel">
       <div className="container">
         <div className="title">Notifications</div>
-        {notifications.map((notification) => {
+        {notifications.map((notification, index) => {
           const { icon, color } = ICONS_MAPPING[notification.type];
           return (
-            <div className="notification-item">
+            <div className="notification-item" key={index}>
               <div className="icon " style={{ "background-color": color }}>
                 <img src={icon} alt={notification.type} />
               </div>
