@@ -19,7 +19,8 @@
   /* Primary Colors */
   --Primary-Blue: #e3f5ff;
   --Primary-Purple: #e5ecf6;
-  --Primary-Light: #f7f9fb;
+  --Primary-Light-2: #f7f9fb;
+  --Primary-Light: #ffffff;
   --Primary-Brand: #1c1c1c;
 
   /* Secondary Colors */
@@ -36,14 +37,14 @@
   --border-secondary: 3px solid var(--Secondary-Cyan);
 
   /* Primary Colors */
-  --color-bg-primary: var(--Primary-Light);     /* page background */
-  --color-bg-secondary: var(--Primary-Purple);  /* panels/cards */
-  --color-bg-accent: var(--Primary-Blue);       /* highlights */
-  --color-brand: var(--Primary-Brand);          /* main brand color */
+  --color-bg-primary: var(--Primary-Light); /* page background */
+  --color-bg-secondary: var(--Primary-Purple); /* panels/cards */
+  --color-bg-accent: var(--Primary-Blue); /* highlights */
+  --color-brand: var(--Primary-Brand); /* main brand color */
 
-  --color-text-primary: var(--black-100);       /* main text */
-  --color-text-secondary: var(--black-60);      /* secondary text */
-  --color-text-inverse: var(--white-100);       /* text on dark bg */
+  --color-text-primary: var(--black-100); /* main text */
+  --color-text-secondary: var(--black-60); /* secondary text */
+  --color-text-inverse: var(--white-100); /* text on dark bg */
 }
 
 /* Dark Theme */
@@ -67,7 +68,7 @@
   /* Primary Colors */
   --Primary-Blue: #e3f5ff;
   --Primary-Purple: #e5ecf6;
-  --Primary-Light: #ffffff0d;
+  --Primary-Light: var(--white-100);
   --Primary-Brand: #c6c7f8;
 
   /* Secondary Colors */
@@ -84,12 +85,12 @@
   --border-secondary: 3px solid var(--Secondary-Cyan);
 
   /* Primary Colors (purpose-based) */
-  --color-bg-primary: var(--Primary-Light);    /* page background */
+  --color-bg-primary: var(--Primary-Light); /* page background */
   --color-bg-secondary: var(--Primary-Purple); /* panels/cards */
-  --color-bg-accent: var(--Primary-Blue);      /* highlights */
-  --color-brand: var(--Primary-Brand);         /* main brand color */
+  --color-bg-accent: var(--Primary-Blue); /* highlights */
+  --color-brand: var(--Primary-Brand); /* main brand color */
 
-  --color-text-primary: var(--black-100);      /* main text */
-  --color-text-secondary: var(--black-40);     /* secondary text */
-  --color-text-inverse: var(--white-100);      /* text on dark bg */
+  --color-text-primary: var(--black-100); /* main text */
+  --color-text-secondary: var(--black-40); /* secondary text */
+  --color-text-inverse: var(--white-100); /* text on dark bg */
 }

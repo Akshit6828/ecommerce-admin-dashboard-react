@@ -4,10 +4,16 @@ import "./index.scss";
 import App from "./App.jsx";
 import { router } from "./routes/routes.jsx";
 import { RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "./context/themeContext.jsx";
+import { NotificationProvider } from "./context/notificationContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <App />
+    <ThemeProvider>
+      <NotificationProvider>
+        <RouterProvider router={router} />
+        <App />
+      </NotificationProvider>
+    </ThemeProvider>
   </StrictMode>
 );

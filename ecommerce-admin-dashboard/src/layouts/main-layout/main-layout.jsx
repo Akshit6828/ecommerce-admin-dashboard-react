@@ -1,10 +1,11 @@
-import React, { useState } from "react";
 import "./main-layout.scss";
 import LeftSidePanel from "../../components/left-side-panel/left-side-panel";
+import AppHeader from "../../components/app-header/app-header";
 import { Outlet } from "react-router-dom";
+import { useNotification } from "../../context/notificationContext";
 
 export default function MainLayout(props) {
-  const [showRightPanel, setShowRightPanel] = useState(true);
+  const { isOpen } = useNotification();
 
   return (
     <div className="main-layout">
@@ -14,16 +15,7 @@ export default function MainLayout(props) {
       {/* right container: app-header on top + content below */}
       <div className="main-layout__right-container">
         {/* app-header */}
-        <div className="main-layout__header">
-          app-header
-          <button
-            onClick={() => setShowRightPanel(!showRightPanel)}
-            style={{ marginLeft: "auto", cursor: "pointer" }}
-            aria-label="Toggle Right Panel"
-          >
-            {showRightPanel ? "Hide" : "Show"} Right Panel
-          </button>
-        </div>
+        <AppHeader />
 
         {/* main content area */}
         <main className="main-layout__content">
@@ -31,13 +23,13 @@ export default function MainLayout(props) {
           <div className="main-layout__main-panel">
             <Outlet />
           </div>
-
-          {/* right-side-panel - conditional rendering */}
-          {showRightPanel && (
-            <div className="main-layout__right-panel">right-side-panel</div>
-          )}
         </main>
       </div>
+
+      {/* right-side-panel - conditional rendering */}
+      {isOpen && (
+        <div className="main-layout__right-panel">right-side-panel</div>
+      )}
     </div>
   );
 }

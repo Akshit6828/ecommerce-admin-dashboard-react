@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import {
   LazyLandingPage,
   LazyMainLayout,
@@ -8,73 +8,41 @@ import {
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: LazyMainLayout,
+    element: <LazyMainLayout />,
     children: [
+      { index: true, element: <Navigate to="/dashboard/default" /> },
       {
-        path: "/",
-        index: true,
-        Component: LazyLandingPage,
-      },
-      {
-        path: "/ecommerce",
-        index: true,
-        Component: LazyCommingSoon,
-      },
-      {
-        path: "/projects",
-        Component: LazyCommingSoon,
-      },
-      {
-        path: "/online-courses",
-        Component: LazyCommingSoon,
-      },
-      {
-        path: "/profile",
-        Component: LazyCommingSoon,
+        path: "dashboard",
+        element: <LazyLandingPage />,
         children: [
-          {
-            path: "overview",
-            index: true,
-            Component: LazyCommingSoon,
-          },
-          {
-            path: "projects",
-            Component: LazyCommingSoon,
-          },
-          {
-            path: "campaigns",
-            Component: LazyCommingSoon,
-          },
-          {
-            path: "documents",
-            Component: LazyCommingSoon,
-          },
-          {
-            path: "followers",
-            Component: LazyCommingSoon,
-          },
+          { path: "default", index: true, element: <LazyLandingPage /> },
+          { path: "ecommerce", element: <LazyCommingSoon /> },
+          { path: "projects", element: <LazyCommingSoon /> },
+          { path: "online-courses", element: <LazyCommingSoon /> },
         ],
       },
       {
-        path: "/account",
-        Component: LazyCommingSoon,
+        path: "pages",
+        element: <LazyCommingSoon />,
+        children: [
+          {
+            path: "user-profile",
+            element: <LazyCommingSoon />,
+            children: [
+              { index: true, path: "overview", element: <LazyCommingSoon /> },
+              { path: "projects", element: <LazyCommingSoon /> },
+              { path: "campaigns", element: <LazyCommingSoon /> },
+              { path: "documents", element: <LazyCommingSoon /> },
+              { path: "followers", element: <LazyCommingSoon /> },
+            ],
+          },
+          { path: "account", element: <LazyCommingSoon /> },
+          { path: "corporate", element: <LazyCommingSoon /> },
+          { path: "blog", element: <LazyCommingSoon /> },
+          { path: "social", element: <LazyCommingSoon /> },
+        ],
       },
-      {
-        path: "/corporate",
-        Component: LazyCommingSoon,
-      },
-      {
-        path: "/corporate",
-        Component: LazyCommingSoon,
-      },
-      {
-        path: "/blog",
-        Component: LazyCommingSoon,
-      },
-      {
-        path: "/social",
-        Component: LazyCommingSoon,
-      },
+      { path: "*", element: <Navigate to="/dashboard/default" replace /> },
     ],
   },
 ]);

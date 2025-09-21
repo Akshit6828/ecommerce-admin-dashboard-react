@@ -1,0 +1,57 @@
+.app-header {
+  border-bottom: 1px solid var(--black-10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-11);
+  gap: var(--gap-sm);
+
+  .navigation-container {
+    display: flex;
+    gap: var(--gap-sm);
+    align-items: center;
+
+    .icon {
+      height: 20px;
+      width: 20px;
+      cursor: pointer;
+    }
+
+    .navigations {
+      display: flex;
+      align-items: center;
+      font-size: var(--font-size-sm);
+      .navigation {
+        display: flex;
+        align-items: center;
+        color: var(--color-text-secondary);
+        text-transform: capitalize;
+
+        .label {
+          cursor: pointer;
+          padding: var(--space-1) var(--space-2);
+        }
+
+        .separator {
+          padding: var(--space-1) var(--space-2);
+        }
+
+        :last-child {
+          color: var(--color-text-primary);
+        }
+      }
+    }
+  }
+
+  .filters-container {
+    display: flex;
+    gap: var(--gap-sm);
+    align-items: center;
+
+    .icon {
+      height: 20px;
+      width: 20px;
+      cursor: pointer;
+    }
+  }
+}

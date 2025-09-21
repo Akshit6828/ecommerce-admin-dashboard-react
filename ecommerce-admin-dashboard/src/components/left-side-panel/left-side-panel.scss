@@ -1,8 +1,8 @@
 .sidebar {
   width: 180px;
   max-width: 180px;
-  background: #fff;
-  border-right: 1px solid #eaeaea;
+  background: var(--color-bg-primary);
+  border-right: 1px solid var(--black-10);
   padding: var(--gap-md);
   font-size: var(--font-size-sm);
   color: var(--color-text-primary);

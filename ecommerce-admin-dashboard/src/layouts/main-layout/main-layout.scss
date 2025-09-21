@@ -2,15 +2,6 @@
   display: flex;
   height: 100vh;
 
-  &__side-menu {
-    width: 220px;
-    border-right: 1px solid #eee;
-    padding: 24px 12px;
-    background: #fafcff;
-    display: flex;
-    flex-direction: column;
-  }
-
   /* Container for header + main content area */
   &__right-container {
     flex: 1;
@@ -19,30 +10,21 @@
   }
 
   &__header {
-    height: 60px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-    background: #fff;
   }
 
   &__content {
     display: flex;
     flex: 1;
-    background: #f7f7fa;
   }
 
   &__main-panel {
     flex: 1;
     padding: 24px;
-    background: #f7f7fa;
   }
 
   &__right-panel {
     width: 320px;
     border-left: 1px solid #eee;
     padding: 24px 12px;
-    background: #fafcff;
   }
 }
