@@ -44,13 +44,13 @@ This template provides a comprehensive setup for building an eCommerce admin das
 1.  Clone the repository:
 
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/Akshit6828/ecommerce-admin-dashboard-react.git
     ```
 
 2.  Navigate to the project directory:
 
     ```sh
-    cd ecommerce-admin-dashboard
+    cd ecommerce-admin-dashboard-react/ecommerce-admin-dashboard
     ```
 
 3.  Install dependencies:
@@ -77,7 +77,7 @@ This template provides a comprehensive setup for building an eCommerce admin das
     npm run build
     ```
 
-    This will create an optimized build in the [dist](http://_vscodecontentref_/10) directory.
+    This will create an optimized build in the `dist` directory.
 
 ### Linting
 
@@ -87,6 +87,27 @@ This template provides a comprehensive setup for building an eCommerce admin das
     npm run lint
     ```
 
+## Design Decisions, Challenges, and Improvements
+
+### Design Decisions
+
+- **Component-Based Architecture**: The application follows a component-based architecture, making it easier to maintain and scale. Each component is responsible for rendering a specific part of the UI.
+- **Redux for State Management**: Redux Toolkit is used for managing the application state. This makes it easier to share state between components and to manage complex state transitions.
+- **SCSS for Styling**: SCSS is used for styling the application. This allows for the use of variables, mixins, and other features that make styling easier and more maintainable.
+- **Lazy Loading**: Lazy loading is used for routes to improve initial load time. This means that only the code for the current route is loaded when the application starts.
+
+### Challenges Faced
+
+- **Chart Integration**: Integrating the various chart types was a challenge. Each chart type has its own specific requirements and configuration options.
+- **State Management**: Managing the application state with Redux Toolkit was a challenge. It required careful planning and organization to ensure that the state was consistent and predictable.
+- **Theming**: Implementing the theming functionality was a challenge. It required careful consideration of how to apply the theme to the various components in the application.
+
+### Improvements Made
+
+- **Improved Performance**: The application's performance has been improved by using lazy loading and by optimizing the rendering of the various components.
+- **Improved Code Quality**: The code quality has been improved by using ESLint and by following a consistent coding style.
+- **Improved User Experience**: The user experience has been improved by adding notifications and by making the application more responsive.
+
 ## Expanding the ESLint configuration
 
-This project uses ESLint for code linting. The configuration can be found in [eslint.config.js](http://_vscodecontentref_/11). Feel free to modify this file to suit your project's specific linting needs. For more information, see the `typescript-eslint` documentation.
+This project uses ESLint for code linting. The configuration can be found in `eslint.config.js`. Feel free to modify this file to suit your project's specific linting needs. For more information, see the `typescript-eslint` documentation.
