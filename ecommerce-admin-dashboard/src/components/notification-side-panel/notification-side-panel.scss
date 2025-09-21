@@ -5,6 +5,8 @@
   gap: var(--gap-lg);
   max-width: 240px;
   border-left: 1px solid var(--black-10);
+  background-color: var(--color-bg-primary);
+  z-index: 999999;
 
   .container {
     display: flex;

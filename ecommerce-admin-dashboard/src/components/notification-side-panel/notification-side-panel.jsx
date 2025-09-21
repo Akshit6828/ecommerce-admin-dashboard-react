@@ -9,7 +9,7 @@ const NOTIFICATION_TYPE = {
 const ICONS_MAPPING = {
   [NOTIFICATION_TYPE.bug]: {
     icon: "/assets/icons/global/BugBeetle.svg",
-    color: "var(--Primary-Blue)",
+    color: "#E3F5FF",
   },
   [NOTIFICATION_TYPE.user_register]: {
     icon: "/assets/icons/global/User-Icon.svg",
@@ -107,7 +107,7 @@ const NotificationSidePanel = () => {
           const { icon, color } = ICONS_MAPPING[notification.type];
           return (
             <div className="notification-item" key={index}>
-              <div className="icon " style={{ "background-color": color }}>
+              <div className="icon" style={{ backgroundColor: color }}>
                 <img src={icon} alt={notification.type} />
               </div>
               <div className="context">

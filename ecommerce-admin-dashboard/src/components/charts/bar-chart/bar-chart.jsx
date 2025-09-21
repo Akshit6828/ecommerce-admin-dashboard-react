@@ -1,6 +1,8 @@
 import { Bar } from "react-chartjs-2";
 import "./bar-chart.scss";
 import ChartJS from "../../../chart-js-config";
+import { useEffect, useRef } from "react";
+import { useNotification } from "../../../context/notificationContext";
 
 const chartOptions = {
   responsive: true,
@@ -84,11 +86,40 @@ const projectionsVsActualsData = {
 };
 
 const BarChart = ({ data = projectionsVsActualsData }) => {
+  const chartRef = useRef(null);
+  const { isOpen } = useNotification();
+
+  useEffect(() => {
+    const handleResize = () => {
+      console.log({
+        chartRef,
+        isOpen,
+      });
+
+      if (isOpen && chartRef.current) {
+        setTimeout(() => {
+          console.log("chart resized");
+
+          chartRef.current.resize();
+        }, 1000);
+      }
+    };
+    console.log({
+      test: 45,
+      isOpen,
+    });
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isOpen]);
+
   return (
     <div className="projections-vs-actuals-chart">
       <h3 className="chart-title">Projections vs Actuals</h3>
       <div className="chart-container">
-        <Bar data={data} options={chartOptions} />
+        <Bar ref={chartRef} data={data} options={chartOptions} />
       </div>
     </div>
   );

@@ -6,6 +6,7 @@
   background-color: var(--Primary-Light-2);
   border-radius: var(--radius-xl);
   min-height: -webkit-fill-available;
+  overflow: auto;
 
   &__title {
     font-size: 24px;

@@ -14,12 +14,16 @@ export default function MainLayout(props) {
       <LeftSidePanel />
 
       {/* right container: app-header on top + content below */}
-      <div className="main-layout-right-container">
+      <div
+        className={`main-layout-right-container ${
+          isOpen ? "with-notification" : ""
+        }`}
+      >
         {/* app-header */}
         <AppHeader />
 
         {/* main content area */}
-        <main className="main-layout-content">
+        <main className={`main-layout-content`}>
           <Outlet />
         </main>
       </div>
