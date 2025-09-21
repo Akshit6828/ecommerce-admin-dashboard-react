@@ -11,6 +11,10 @@
   }
 
   .dashboard-containt {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-md);
+
     .basic-summery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -29,7 +33,9 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: var(--gap-md);
+
       .revenue-summery {
+        grid-column: span 3;
       }
       .revenue-by-location {
       }

@@ -20,7 +20,7 @@ const tinyChartOptions = {
       max: 30,
       ticks: { stepSize: 10, callback: (val) => `${val}M` },
     },
-    x: { display: false },
+    x: { display: true },
   },
   elements: {
     line: { tension: 0.5, borderWidth: 3 },
@@ -28,6 +28,7 @@ const tinyChartOptions = {
   },
 };
 
+const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
 const dummyData = {
   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
   datasets: [
@@ -63,14 +64,18 @@ const LineChart = ({ data = dummyData }) => {
     <div className="line-chart">
       <div className="title-container">
         <h5 className="title">Revenue</h5>
-        <span className="separator"></span>
+        <span className="separator">|</span>
         <ul>
-          <li>Current Week $58,211</li>
-          <li>Previous Week $68,768</li>
+          <li>
+            Current Week <b>$58,211</b>
+          </li>
+          <li>
+            Previous Week <b>$68,768</b>
+          </li>
         </ul>
       </div>
       <div className="chart-container">
-        <Line data={data} options={tinyChartOptions} height={250} />
+        <Line data={data} options={tinyChartOptions} />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import SummeryCard from "../../components/summery-card/summery-card";
 import "./landing-page.scss";
 import BarChart from "../../components/charts/bar-chart/bar-chart";
 import LineChart from "../../components/charts/line-chart/line-chart";
+import WorldMap from "../../components/charts/world-map/world-map";
 
 const summaryCardsData = [
   {
@@ -54,7 +55,9 @@ export default function LandingPage() {
           <div className="revenue-summery">
             <LineChart />
           </div>
-          <div className="revenue-by-location"></div>
+          <div className="revenue-by-location">
+            <WorldMap />
+          </div>
         </section>
         <section className="sales-summery">
           <div className="top-products-conatiner"></div>
