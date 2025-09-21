@@ -117,3 +117,13 @@ This template provides a comprehensive setup for building an eCommerce admin das
 ## Expanding the ESLint configuration
 
 This project uses ESLint for code linting. The configuration can be found in `eslint.config.js`. Feel free to modify this file to suit your project's specific linting needs. For more information, see the `typescript-eslint` documentation.
+
+
+## Screenshots
+
+<img width="1024" height="998" alt="landing-page" src="https://github.com/user-attachments/assets/260c6472-a294-48e2-9184-b446cadac539" />
+
+<img width="1024" height="998" alt="landing-page-dark" src="https://github.com/user-attachments/assets/d6935138-ff29-4a8d-b495-05d6758ca1ed" />
+
+<img width="1024" height="998" alt="landing-page-sidebar"  src="https://github.com/user-attachments/assets/548861d4-4376-4bed-afb9-a5b532912732" />
+
