@@ -3,6 +3,7 @@ import {
   LazyLandingPage,
   LazyMainLayout,
   LazyCommingSoon,
+  LazyOrders,
 } from "./lazy-routes";
 
 export const router = createBrowserRouter([
@@ -16,7 +17,10 @@ export const router = createBrowserRouter([
         children: [
           { index: true, element: <Navigate to="default" /> },
           { path: "default", index: true, element: <LazyLandingPage /> },
-          { path: "ecommerce", element: <LazyCommingSoon /> },
+          {
+            path: "ecommerce",
+            element: <LazyOrders />,
+          },
           { path: "projects", element: <LazyCommingSoon /> },
           { path: "online-courses", element: <LazyCommingSoon /> },
         ],

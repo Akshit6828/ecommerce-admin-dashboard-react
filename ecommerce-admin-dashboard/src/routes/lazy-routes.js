@@ -9,5 +9,5 @@ const LazyLandingPage = React.lazy(() =>
 const LazyCommingSoon = React.lazy(() =>
   import("../pages/comming-soon/comming-soon")
 );
-
-export { LazyMainLayout, LazyLandingPage, LazyCommingSoon };
+const LazyOrders = React.lazy(() => import("../pages/orders/orders"));
+export { LazyMainLayout, LazyLandingPage, LazyCommingSoon, LazyOrders };

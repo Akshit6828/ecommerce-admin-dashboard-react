@@ -1,0 +1,18 @@
+.bar-chart {
+  padding: var(--gap-md);
+  background-color: var(--Primary-Light-2);
+  border-radius: var(--radius-xl);
+
+  .title {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--gap-sm);
+    margin: 0;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 250px;
+  }
+}

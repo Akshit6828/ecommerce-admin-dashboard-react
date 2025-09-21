@@ -1,0 +1,41 @@
+.summery-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  padding: var(--gap-lg);
+  gap: var(--gap-sm);
+  justify-content: center;
+
+  .title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .count {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-medium);
+      padding: var(--gap-xs) var(--space-0);
+    }
+
+    .percentage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--gap-xs);
+      font-size: var(--font-size-sm);
+      padding: var(--gap-xs) var(--space-0);
+
+      .icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

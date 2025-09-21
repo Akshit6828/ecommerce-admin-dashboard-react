@@ -1,0 +1,45 @@
+.landing-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+
+  h2 {
+    margin: var(--space-2) var(--space-0);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .dashboard-containt {
+    .basic-summery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-md);
+
+      .counts-summery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gap-md);
+      }
+      .projection-summery {
+      }
+    }
+
+    .revenue-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--gap-md);
+      .revenue-summery {
+      }
+      .revenue-by-location {
+      }
+    }
+
+    .sales-summery {
+      .top-products-conatiner {
+      }
+      .total-sales-summery {
+      }
+    }
+  }
+}

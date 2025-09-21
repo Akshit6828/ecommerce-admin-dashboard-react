@@ -16,7 +16,6 @@ export const menuItemsList = [
         label: "eCommerce",
         hasChildren: true,
         icon: "/public/assets/icons/left-side-panel/Ecommerce.svg",
-        children: [],
       },
       {
         id: 13,

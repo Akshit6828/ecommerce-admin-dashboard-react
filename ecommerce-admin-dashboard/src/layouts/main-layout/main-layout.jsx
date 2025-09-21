@@ -14,24 +14,18 @@ export default function MainLayout(props) {
       <LeftSidePanel />
 
       {/* right container: app-header on top + content below */}
-      <div className="main-layout__right-container">
+      <div className="main-layout-right-container">
         {/* app-header */}
         <AppHeader />
 
         {/* main content area */}
-        <main className="main-layout__content">
-          {/* main-panel */}
-          <div className="main-layout__main-panel">
-            <Outlet />
-          </div>
+        <main className="main-layout-content">
+          <Outlet />
         </main>
       </div>
 
       {/* right-side-panel - conditional rendering */}
-      {isOpen && (
-        // <div className="main-layout__right-panel">right-side-panel</div>
-        <NotificationSidePanel />
-      )}
+      {isOpen && <NotificationSidePanel />}
     </div>
   );
 }
