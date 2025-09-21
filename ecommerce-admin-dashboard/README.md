@@ -26,7 +26,7 @@ This template provides a comprehensive setup for building an eCommerce admin das
   - `BarChart`: For comparing projections vs. actuals.
   - `PieChart`: For showing total sales distribution.
   - `WorldMap`: For visualizing revenue by location.
-- **SCSS Styling**: Uses SCSS for styling with a well-organized structure including global variables and mixins.
+- **SCSS Styling**: Uses SCSS for styling with a well-organized structure including global variables.
 - **Lazy Loading**: Implements lazy loading for routes to improve initial load time.
 
 ## Technologies Used
@@ -99,7 +99,7 @@ This template provides a comprehensive setup for building an eCommerce admin das
 
 - **Component-Based Architecture**: The application follows a component-based architecture, making it easier to maintain and scale. Each component is responsible for rendering a specific part of the UI.
 - **Redux for State Management**: Redux Toolkit is used for managing the application state. This makes it easier to share state between components and to manage complex state transitions.
-- **SCSS for Styling**: SCSS is used for styling the application. This allows for the use of variables, mixins, and other features that make styling easier and more maintainable.
+- **SCSS for Styling**: SCSS is used for styling the application. This allows for the use of variables, and other features that make styling easier and more maintainable.
 - **Lazy Loading**: Lazy loading is used for routes to improve initial load time. This means that only the code for the current route is loaded when the application starts.
 
 ### Challenges Faced
