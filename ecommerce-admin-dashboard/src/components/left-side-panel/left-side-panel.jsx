@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const userInfo = {
   firstName: "ByeWind",
   lastName: "",
-  avatar: "/public/assets/images/user-avtar-image.png",
+  avatar: "/assets/images/user-avtar-image.png",
 };
 
 export default function LeftSidePanel() {
@@ -74,7 +74,7 @@ export default function LeftSidePanel() {
           {item.hasChildren && (
             <img
               className={!fromRecent && isActive ? "active" : ""}
-              src="/public/assets/icons/left-side-panel/ArrowLineRight.svg"
+              src="/assets/icons/left-side-panel/ArrowLineRight.svg"
               alt="arrow"
             />
           )}

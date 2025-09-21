@@ -8,15 +8,15 @@ const NOTIFICATION_TYPE = {
 
 const ICONS_MAPPING = {
   [NOTIFICATION_TYPE.bug]: {
-    icon: "/public/assets/icons/global/BugBeetle.svg",
+    icon: "/assets/icons/global/BugBeetle.svg",
     color: "var(--Primary-Blue)",
   },
   [NOTIFICATION_TYPE.user_register]: {
-    icon: "/public/assets/icons/global/User-Icon.svg",
+    icon: "/assets/icons/global/User-Icon.svg",
     color: "#E5ECF6",
   },
   [NOTIFICATION_TYPE.subscribe]: {
-    icon: "/public/assets/icons/global/Broadcast.svg",
+    icon: "/assets/icons/global/Broadcast.svg",
     color: "#E5ECF6",
   },
 };
@@ -46,54 +46,54 @@ const notifications = [
 
 const activities = [
   {
-    icon: "/public/assets/icons/global/User-1.png",
+    icon: "/assets/icons/global/User-1.png",
     notificationText: "You have a bug that needs to be fixed.",
     time: "Just now",
   },
   {
-    icon: "/public/assets/icons/global/User-2.svg",
+    icon: "/assets/icons/global/User-2.svg",
     notificationText: "Released a new version",
     time: "59 minutes ago",
   },
   {
-    icon: "/public/assets/icons/global/User-3.png",
+    icon: "/assets/icons/global/User-3.png",
     notificationText: "Submitted a bug",
     time: "12 hours ago",
   },
   {
-    icon: "/public/assets/icons/global/User-4.svg",
+    icon: "/assets/icons/global/User-4.svg",
     notificationText: "Modified A data in Page X",
     time: "Today, 11:59 AM",
   },
   {
-    icon: "/public/assets/icons/global/User-4.svg",
+    icon: "/assets/icons/global/User-4.svg",
     notificationText: "Deleted a page in Project X",
     time: "Feb 2, 2023",
   },
 ];
 const contacts = [
   {
-    icon: "/public/assets/icons/global/User-5.png",
+    icon: "/assets/icons/global/User-5.png",
     name: "Natali Craig",
   },
   {
-    icon: "/public/assets/icons/global/User-11.png",
+    icon: "/assets/icons/global/User-11.png",
     name: "Drew Cano",
   },
   {
-    icon: "/public/assets/icons/global/User-7.png",
+    icon: "/assets/icons/global/User-7.png",
     name: "Orlando Diggs",
   },
   {
-    icon: "/public/assets/icons/global/User-8.svg",
+    icon: "/assets/icons/global/User-8.svg",
     name: "Andi Lane",
   },
   {
-    icon: "/public/assets/icons/global/User-9.png",
+    icon: "/assets/icons/global/User-9.png",
     name: "Kate Morrison",
   },
   {
-    icon: "/public/assets/icons/global/User-10.png",
+    icon: "/assets/icons/global/User-10.png",
     name: "Koray Okumus",
   },
 ];

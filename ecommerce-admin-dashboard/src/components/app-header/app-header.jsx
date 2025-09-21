@@ -23,25 +23,25 @@ const AppHeader = () => {
   const rightSideIconsList = [
     {
       id: 1,
-      icon: "/public/assets/icons/global/Light-theme.svg",
+      icon: "/assets/icons/global/Light-theme.svg",
       alt: "theme",
       onclick: () => handleThemeChange(),
     },
     {
       id: 2,
-      icon: "/public/assets/icons/global/Clock.svg",
+      icon: "/assets/icons/global/Clock.svg",
       alt: "Refresh",
       onclick: () => {},
     },
     {
       id: 3,
-      icon: "/public/assets/icons/global/Bell.svg",
+      icon: "/assets/icons/global/Bell.svg",
       alt: "Notifications",
       onclick: () => handleNotificationClick(),
     },
     {
       id: 4,
-      icon: "/public/assets/icons/global/Sidebar.svg",
+      icon: "/assets/icons/global/Sidebar.svg",
       alt: "menu",
       onclick: () => {},
     },
@@ -92,7 +92,7 @@ const AppHeader = () => {
     <header className="app-header">
       <div className="navigation-container">
         <span className="icon theme-icon">
-          <img src="/public/assets/icons/global/Sidebar.svg" alt="menu" />
+          <img src="/assets/icons/global/Sidebar.svg" alt="menu" />
         </span>
         <span className="icon " onClick={handleFavoriteClick}>
           <img
@@ -100,8 +100,8 @@ const AppHeader = () => {
             height={16}
             src={
               isFavoritePageData
-                ? "/public/assets/icons/global/YellowStar.png"
-                : "/public/assets/icons/global/Star.svg"
+                ? "/assets/icons/global/YellowStar.png"
+                : "/assets/icons/global/Star.svg"
             }
             className={`${isFavoritePageData && "active"}`}
             alt="favorite"

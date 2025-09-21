@@ -3,8 +3,8 @@ import "./summery-card.scss";
 const SummeryCard = ({ cardData }) => {
   const iconUrl =
     cardData.icon === "up"
-      ? "/public/assets/icons/global/ArrowRise.svg"
-      : "/public/assets/icons/global/ArrowDown.svg";
+      ? "/assets/icons/global/ArrowRise.svg"
+      : "/assets/icons/global/ArrowDown.svg";
   return (
     <div
       className={`summery-card ${cardData?.classes}`}
