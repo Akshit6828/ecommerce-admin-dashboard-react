@@ -59,3 +59,34 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .landing-dashboard {
+    .dashboard-containt {
+      .basic-summery {
+        grid-template-columns: 1fr;
+        .counts-summery {
+          grid-template-columns: 1fr;
+        }
+      }
+      .revenue-row {
+        grid-template-columns: 1fr;
+        .revenue-summery {
+          grid-column: span 1;
+        }
+        .revenue-by-location {
+          grid-column: span 1;
+        }
+      }
+      .sales-summery {
+        grid-template-columns: 1fr;
+        .top-products-conatiner {
+          grid-column: span 1;
+        }
+        .total-sales-summery {
+          grid-column: span 1;
+        }
+      }
+    }
+  }
+}
