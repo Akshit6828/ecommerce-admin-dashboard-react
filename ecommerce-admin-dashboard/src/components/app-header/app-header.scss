@@ -5,6 +5,10 @@
   justify-content: space-between;
   padding: var(--space-5) var(--space-11);
   gap: var(--gap-sm);
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg-primary);
+  z-index: 1;
 
   .navigation-container {
     display: flex;

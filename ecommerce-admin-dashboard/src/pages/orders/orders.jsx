@@ -98,10 +98,12 @@ const Orders = () => {
 
   // Calendar icon from the provided code
   const CalendarIcon = () => (
-    <svg width="16" height="16" fill="none" className="calendar-icon">
-      <rect x="2.2" y="3.2" width="11.8" height="9.6" rx="2" fill="#c9d6e5" />
-      <rect x="4.2" y="5.2" width="7.8" height="5.6" rx="1" fill="#eee" />
-    </svg>
+    <img
+      width={20}
+      height={20}
+      src="/assets/icons/global/pages/order/order_time.svg"
+      alt="calendar"
+    />
   );
 
   const ChevronLeftIcon = () => (
@@ -140,8 +142,42 @@ const Orders = () => {
     <div className="orders-container">
       <div className="orders-header">
         <div className="orders-title">Order List</div>
-        <div className="orders-search">
-          <input placeholder="Search" />
+      </div>
+      <div className="order-subheader">
+        <div className="order-subheader-lhs">
+          <img
+            src="/assets/icons/global/pages/order/add_order.svg"
+            alt="Add-Order"
+            width={20}
+            height={20}
+            className="theme-icon"
+          />
+          <img
+            src="/assets/icons/global/pages/order/filter_order.svg"
+            alt="Filter-Order"
+            width={20}
+            height={20}
+            className="theme-icon"
+          />
+          <img
+            src="/assets/icons/global/pages/order/sort_order.svg"
+            alt="Add-Order"
+            width={20}
+            height={20}
+            className="theme-icon"
+          />
+        </div>
+        <div className="order-subheader-rhs">
+          <div className="orders-search">
+            <img
+              src="/assets/icons/global/pages/order/search_order.svg"
+              alt="Search-Order"
+              width={20}
+              height={20}
+              className="theme-icon search_order"
+            />
+            <input placeholder="Search" className="search" type="text"></input>
+          </div>
         </div>
       </div>
 

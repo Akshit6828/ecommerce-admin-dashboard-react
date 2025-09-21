@@ -75,18 +75,19 @@
   --white-100: #1c1c1c;
 
   /* Primary Colors */
-  --Primary-Blue: #e3f5ff;
-  --Primary-Purple: #e5ecf6;
+  --Primary-Blue: #102733; /* darker tone of light-blue */
+  --Primary-Purple: #1e2233; /* muted purple-gray background */
+  --Primary-Light-2: #121212; /* extra dark surface */
   --Primary-Light: var(--white-100);
   --Primary-Brand: #c6c7f8;
 
   /* Secondary Colors */
-  --Secondary-Cyan: #a8c5da;
-  --Secondary-Indigo: #95a4fc;
-  --Secondary-Blue: #b1e3ff;
-  --Secondary-Mint: #baedbd;
-  --Secondary-Green: #a1e3cb;
-  --Secondary-Yellow: #ffe999;
+  --Secondary-Cyan: #37586b;
+  --Secondary-Indigo: #3a3f78;
+  --Secondary-Blue: #284d66;
+  --Secondary-Mint: #2a5c2c;
+  --Secondary-Green: #1e4d3a;
+  --Secondary-Yellow: #665c28;
 
   /* Borders */
   --border-right: 1px solid var(--black-10);
@@ -102,6 +103,12 @@
   --color-text-primary: var(--black-100); /* main text */
   --color-text-secondary: var(--black-40); /* secondary text */
   --color-text-inverse: var(--white-100); /* text on dark bg */
+
+  /* Image Filters */
+  --filter-white: brightness(0) saturate(100%) invert(100%) sepia(0%)
+    saturate(1%) hue-rotate(65deg) brightness(108%) contrast(101%);
+  --filter-black: brightness(0) saturate(100%) invert(0%) sepia(6%)
+    saturate(349%) hue-rotate(329deg) brightness(104%) contrast(88%);
 
   --filter-primary: var(--filter-white);
 }
