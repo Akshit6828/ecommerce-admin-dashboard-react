@@ -6,7 +6,7 @@ This template provides a comprehensive setup for building an eCommerce admin das
 
 **Production URL**: [https://ecommerce-admin-dashboard-react-three.vercel.app/](https://ecommerce-admin-dashboard-react-three.vercel.app/)
 
-**Video Demo**: [Coming Soon - YouTube Demo Video]
+**Video Demo**:  [YouTube Demo Video](https://youtu.be/O5eda91gakk?si=qLvEFREU8tPlLdFF)
 
 ## Key Features
 
